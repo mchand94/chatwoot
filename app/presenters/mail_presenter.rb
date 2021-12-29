@@ -29,8 +29,7 @@ class MailPresenter < SimpleDelegator
   def select_body(mail_part)
     return '' unless mail_part
 
-    message = mail_part
-    decoded = encode_to_unicode(message.decoded)
+    decoded = encode_to_unicode(mail_part.decoded)
 
     return decoded if mail.text_part
 
